@@ -16,14 +16,14 @@ They do need three symlinks, though:
 
 The language changes are rather small and there is no real point in doing any exercises - it suffices to take a look. 
 
-* [private interface methods](src/org/codefx/demo/java9/lang/private_interface_methods/PrivateInterfaceMethods.java) ([JEP 213](http://openjdk.java.net/jeps/213))
-* [try-with-resources on effectively final variables](src/org/codefx/demo/java9/lang/try_with_resources/TryWithResources.java) ([JEP 213](http://openjdk.java.net/jeps/213))
-* [diamond operator for anonymous classes](src/org/codefx/demo/java9/lang/diamond_operator/DiamondOperator.java) ([JEP 213](http://openjdk.java.net/jeps/213))
-* [`@SaveVarargs` on private non-final methods](src/org/codefx/demo/java9/lang/safe_varargs/SafeVarargs.java) ([JEP 213](http://openjdk.java.net/jeps/213))
-* [no warnings for deprecated imports](src/org/codefx/demo/java9/lang/deprecated_imports/DeprecatedImports.java) ([JEP 211](http://openjdk.java.net/jeps/211))
+* [private interface methods](src/java9/lang/private_interface_methods/PrivateInterfaceMethods.java) ([JEP 213](http://openjdk.java.net/jeps/213))
+* [try-with-resources on effectively final variables](src/java9/lang/try_with_resources/TryWithResources.java) ([JEP 213](http://openjdk.java.net/jeps/213))
+* [diamond operator for anonymous classes](src/java9/lang/diamond_operator/DiamondOperator.java) ([JEP 213](http://openjdk.java.net/jeps/213))
+* [`@SaveVarargs` on private non-final methods](src/java9/lang/safe_varargs/SafeVarargs.java) ([JEP 213](http://openjdk.java.net/jeps/213))
+* [no warnings for deprecated imports](src/java9/lang/deprecated_imports/DeprecatedImports.java) ([JEP 211](http://openjdk.java.net/jeps/211))
 
 ## APIs
 
-* [`Stream` improvements](src/org/codefx/demo/java9/api/stream)
-* [`Optional` improvements](src/org/codefx/demo/java9/api/optional)
-* [collection factory methods](src/org/codefx/demo/java9/api/collection_factory_methods) (instead of collection literals; [JEP 269](http://openjdk.java.net/jeps/269))
+* [`Stream` improvements](src/java9/api/stream)
+* [`Optional` improvements](src/java9/api/optional)
+* [collection factory methods](src/java9/api/collection_factory_methods/CollectionFactories.java) (instead of collection literals; [JEP 269](http://openjdk.java.net/jeps/269))
