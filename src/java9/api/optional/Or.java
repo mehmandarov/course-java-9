@@ -20,7 +20,9 @@ public class Or {
 		// TODO:
 		// chain the `from` methods and return the first non-empty Optional
 		// (if one exists)
-		return Optional.empty();
+		return fromMemory(id)
+				.or(() -> fromDisk(id))
+				.or(() -> fromRemote(id));
 	}
 
 	public static Optional<Customer> fromMemory(String id) {
