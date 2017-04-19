@@ -25,3 +25,4 @@ The language changes are rather small and there is no real point in doing any ex
 ## APIs
 
 * [`Stream` improvements](src/org/codefx/demo/java9/api/stream)
+* [`Optional` improvements](src/org/codefx/demo/java9/api/optional)
