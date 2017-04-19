@@ -1,6 +1,7 @@
 package java9.api.stream;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Stream;
 
 import static java.util.Objects.requireNonNull;
@@ -47,26 +48,33 @@ public class DropTakeWhile {
 	public Stream<LogMessage> fromFirstWarning() {
 		// TODO:
 		// return the stream of messages that begins with the first warning
-		return messages.stream();
+		return messages.stream()
+				.dropWhile(message -> message.priority.lessThan(WARNING));
 	}
 
 	public Stream<LogMessage> untilBeforeFirstError() {
 		// TODO:
 		// return the stream of messages that ends _before_ the first error
-		return messages.stream();
+		return messages.stream()
+				.takeWhile(message -> message.priority.atLeast(ERROR));
 	}
 
 	public Stream<LogMessage> untilFirstError() {
 		// TODO:
 		// return the stream of messages that ends _with_ the first error
-		return messages.stream();
+		AtomicBoolean sawFirstError = new AtomicBoolean(false);
+		return messages.stream()
+				.takeWhile(message -> !sawFirstError.getAndSet(message.priority.atLeast(ERROR)));
 	}
 
 	public Stream<LogMessage> fromFirstWarningToFollowingError() {
 		// TODO:
 		// return the stream of messages that starts with the first warning
 		// and ends with the first following error
-		return messages.stream();
+		AtomicBoolean sawFirstError = new AtomicBoolean(false);
+		return messages.stream()
+				.dropWhile(message -> message.priority.lessThan(WARNING))
+				.takeWhile(message -> !sawFirstError.getAndSet(message.priority.atLeast(ERROR)));
 	}
 
 	static class LogMessage {
