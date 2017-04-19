@@ -1,0 +1,40 @@
+# Java
+
+*.class
+*.log
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+hs_err_pid*
+
+
+# Eclipse
+
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+.project
+*.launch
+.classpath
+
+
+# IntelliJ
+
+.idea
+*.iml
+*.iws
+/out/
+
