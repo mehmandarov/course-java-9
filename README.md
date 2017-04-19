@@ -26,3 +26,4 @@ The language changes are rather small and there is no real point in doing any ex
 
 * [`Stream` improvements](src/org/codefx/demo/java9/api/stream)
 * [`Optional` improvements](src/org/codefx/demo/java9/api/optional)
+* [collection factory methods](src/org/codefx/demo/java9/api/collection_factory_methods) (instead of collection literals; [JEP 269](http://openjdk.java.net/jeps/269))
