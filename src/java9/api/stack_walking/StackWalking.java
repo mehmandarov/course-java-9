@@ -1,10 +1,12 @@
 package java9.api.stack_walking;
 
+import java.lang.StackWalker.Option;
+import java.lang.StackWalker.StackFrame;
+import java.util.Arrays;
+
 // For more details have a look at
 //  - https://www.sitepoint.com/deep-dive-into-java-9s-stack-walking-api/
 //  - https://github.com/arnaudroger/site-point-01_stackwalker
-
-import java.util.Arrays;
 
 class StackWalking {
 
@@ -55,12 +57,32 @@ class StackWalking {
 	static void newWalkFrames() {
 		// TODO:
 		// use `StackWalker` to print frames; experiment with different `StackWalker.Option`s
+		StackWalker
+				.getInstance(Option.SHOW_HIDDEN_FRAMES)
+				.forEach(System.out::println);
 	}
 
 	static void newWalkBingo() {
 		// TODO:
 		// use `StackWalker` to print:
 		// "<line-number>: <method-name>" followed by "Bingo!" if the method is named `one`
+		double averageLineNumber = StackWalker
+				.getInstance()
+				.walk(frames -> frames
+						.peek(StackWalking::print)
+						.mapToInt(StackFrame::getLineNumber)
+						.average()
+						.orElse(0.0)
+				);
+		System.out.println(averageLineNumber);
+	}
+
+	private static void print(StackFrame frame) {
+		System.out.print(frame.getLineNumber() + ": " + frame.getMethodName());
+		if (frame.getMethodName().contains("one"))
+			System.out.println(" BINGO! ");
+		else
+			System.out.println();
 	}
 
 }
