@@ -13,13 +13,19 @@ sed 's/VersionDependent8/VersionDependent/g' \
 sed 's/VersionDependent8/VersionDependent/g' \
 	src/java9/jvm/multi_release/Main.java \
 	> out-mr/java-8-src/Main.java
-
-echo "TODO: COMPILE THE CLASSES IN out-mr/java-8-src AGAINST JAVA 8"
+javac9 --release 8 -d out-mr/java-8 out-mr/java-8-src/*.java
 
 echo "compile classes for Java 9"
 sed 's/VersionDependent9/VersionDependent/g' \
 	src/java9/jvm/multi_release/VersionDependent9.java \
 	> out-mr/java-9-src/VersionDependent.java
-echo "TODO: COMPILE THE CLASSES IN out-mr/java-9-src AGAINST JAVA 9"
+javac9 --release 8 -d out-mr/java-9 out-mr/java-9-src/*.java
 
-echo "TODO: PACKAGE AND RUN ON JAVA 8 AND JAVA 9"
+echo "package"
+jar9 --create --file out-mr/mr.jar -C out-mr/java-8 . --release 9 -C out-mr/java-9 .
+
+echo "run with Java 8:"
+java -cp out-mr/mr.jar org.codefx.demo.java9.internal.multi_release.Main
+
+echo "run with Java 9:"
+java9 -cp out-mr/mr.jar org.codefx.demo.java9.internal.multi_release.Main
