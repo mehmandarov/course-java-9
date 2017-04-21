@@ -7,7 +7,7 @@ public class SystemOutLoggerFinder {
 	//  Use platform-logging.sh to compile and launch the resulting modules.)
 
 	// TODO:
-	// implement `java.lang.System.LoggerFinder` and provide a `System.Logger`
+	// extend `java.lang.System.LoggerFinder` and provide a `System.Logger`
 	// that logs everything to System.out, prefixing it so it is easily identifiable
 
 	// TODO:

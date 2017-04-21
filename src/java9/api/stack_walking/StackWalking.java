@@ -18,7 +18,7 @@ class StackWalking {
 		System.out.println();
 
 		System.out.println("NEW BINGO");
-		delegateViaReflection(StackWalking::newWalkFrames);
+		delegateViaReflection(StackWalking::newWalkBingo);
 		System.out.println();
 	}
 
