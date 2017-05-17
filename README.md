@@ -14,7 +14,7 @@ They do need three symlinks, though:
 
 ## Language Changes
 
-The language changes are rather small and there is no real point in doing any exercises - it suffices to take a look. 
+The language changes are rather small and there is no real point in doing any exercises - it suffices to take a look.
 
 * [private interface methods](src/java9/lang/private_interface_methods/PrivateInterfaceMethods.java) ([JEP 213](http://openjdk.java.net/jeps/213))
 * [try-with-resources on effectively final variables](src/java9/lang/try_with_resources/TryWithResources.java) ([JEP 213](http://openjdk.java.net/jeps/213))
@@ -28,3 +28,8 @@ The language changes are rather small and there is no real point in doing any ex
 * [`Optional` improvements](src/java9/api/optional)
 * [collection factory methods](src/java9/api/collection_factory_methods/CollectionFactories.java) (instead of collection literals; [JEP 269](http://openjdk.java.net/jeps/269))
 * [stack walking](src/java9/api/stack_walking/StackWalking.java) ([JEP 259](http://openjdk.java.net/jeps/259), [post on SitePoint](https://www.sitepoint.com/deep-dive-into-java-9s-stack-walking-api/) including benchmarks)
+
+## JVM Features
+
+* multi-release JARs ([classes](src/java9/jvm/multi_release) and [script](multi-release.sh))
+* redirected platform logging ([classes](src-logging/java9/jvm/platform_logging) and [script](platform-logging.sh))
